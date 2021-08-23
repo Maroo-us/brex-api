@@ -1,0 +1,5 @@
+/dist/
+/types/
+
+package.json
+yarn.lock
