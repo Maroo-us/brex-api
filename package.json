@@ -2,9 +2,9 @@
   "name": "brex-api",
   "version": "0.0.1",
   "description": "A Node.js wrapper around Brex API.",
-  "main": "index.js",
+  "main": "dist/brex-api.js",
   "license": "MIT",
-  "types": "dist/brex.d.ts",
+  "types": "dist/brex-api.d.ts",
   "files": [
     "dist"
   ],
