@@ -81,6 +81,7 @@ By default, the production environment is used.
 # Prepare a new release
 > npm version patch|minor|major
 > npm publish
+> git push && git push --tags
 ```
 
 ## License
