@@ -2,6 +2,12 @@
 
 Unofficial JS/TS wrapper for Brex (c) API.
 
+## Installation
+
+```sh
+yarn add @maroo/brex-api
+```
+
 ## Usage
 
 ```ts
