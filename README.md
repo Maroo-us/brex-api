@@ -11,7 +11,7 @@ yarn add @maroo/brex-api
 ## Usage
 
 ```ts
-import { BrexClient } from './BrexClient'
+import { BrexClient } from '@maroo/brex-api'
 
 const brex = new BrexClient({
   clientId: 'your_client_id',
@@ -72,8 +72,7 @@ brex.onTokenPairExchanged((pair) => {
 If you want to connect to Brex staging environment, you can specify optional `environment` property in the initialization options:
 
 ```ts
-import { BrexClient } from './BrexClient'
-import { BrexEnvironment } from './BrexEnvironment'
+import { BrexClient, BrexEnvironment } from '@maroo/brex-api'
 
 const brex = new BrexClient({
   clientId: 'your_client_id',
