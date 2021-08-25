@@ -1,6 +1,6 @@
 # brex-api
 
-A Node.js wrapper around Brex API.
+Unofficial JS/TS wrapper for Brex (c) API.
 
 ## Usage
 
@@ -86,4 +86,5 @@ By default, the production environment is used.
 
 ## License
 
-Licensed under the [MIT License](LICENSE).
+Maroo-us/brex-api — Licensed under the [MIT License](LICENSE).
+“Brex” and the Brex logo — registered trademarks of ”Brex Inc.”
