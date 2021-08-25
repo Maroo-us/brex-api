@@ -29,6 +29,25 @@ brex.vendors.list().then((response) => {
 })
 ```
 
+Create a transfer:
+
+```ts
+const res = await brex.transfers.create({
+  amount: {
+    // Transfer Amount as cents
+    amount: 12340,
+    currency: 'USD',
+  },
+  description: 'Test transfer',
+  counterparty: {
+    type: 'VENDOR',
+    paymentInstrumentId: 'vendor_payment_instrument_id',
+  },
+  externalMemo: 'ACH PMT',
+  cashAccountId: 'your_cash_account_id',
+})
+```
+
 Optionally, you can add a callback function that will be called when token pair is updated:
 
 ```ts
