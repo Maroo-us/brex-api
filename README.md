@@ -87,4 +87,5 @@ By default, the production environment is used.
 ## License
 
 Maroo-us/brex-api — Licensed under the [MIT License](LICENSE).
+
 “Brex” and the Brex logo — registered trademarks of ”Brex Inc.”
