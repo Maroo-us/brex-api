@@ -5,13 +5,13 @@ Unofficial JS/TS wrapper for Brex (c) API.
 ## Installation
 
 ```sh
-yarn add @maroo/brex-api
+yarn add @maroo-us/brex-api
 ```
 
 ## Usage
 
 ```ts
-import { BrexClient } from '@maroo/brex-api'
+import { BrexClient } from '@maroo-us/brex-api'
 
 const brex = new BrexClient({
   clientId: 'your_client_id',
@@ -72,7 +72,7 @@ brex.onTokenPairExchanged((pair) => {
 If you want to connect to Brex staging environment, you can specify optional `environment` property in the initialization options:
 
 ```ts
-import { BrexClient, BrexEnvironment } from '@maroo/brex-api'
+import { BrexClient, BrexEnvironment } from '@maroo-us/brex-api'
 
 const brex = new BrexClient({
   clientId: 'your_client_id',
@@ -111,7 +111,7 @@ By default, the production environment is used.
 
 # Prepare a new release
 > npm version patch|minor|major
-> npm publish
+> npm publish --access=public
 > git push && git push --tags
 ```
 

@@ -1,10 +1,35 @@
 {
-  "name": "brex-api",
-  "version": "0.1.0",
-  "description": "A Node.js wrapper around Brex API.",
+  "name": "@maroo-us/brex-api",
+  "version": "0.1.1",
+  "description": "Unofficial JS/TS wrapper for Brex (c) API.",
   "main": "dist/brex-api.js",
   "license": "MIT",
   "types": "dist/brex-api.d.ts",
+  "keywords": [
+    "brex",
+    "brex bank",
+    "brex api",
+    "maroo",
+    "maroo-us"
+  ],
+  "bugs": {
+    "url" : "https://github.com/Maroo-us/brex-api/issues",
+    "email" : "support@maroo.us"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Maroo-us/brex-api.git"
+  },
+  "contributors": [
+    {
+      "name" : "Alexey Agachev",
+      "email" : "a.agachev@maroo.us"
+    },
+    {
+      "name" : "Andrei Riaskov",
+      "email" : "andrei@maroo.us"
+    }
+  ],
   "files": [
     "dist"
   ],
