@@ -29,10 +29,14 @@ brex.vendors.list().then((response) => {
 })
 ```
 
-Create a transfer:
+Working with transfers:
 
 ```ts
-const res = await brex.transfers.create({
+// List existing transfers
+const listTransferRes = await brex.transfers.list()
+
+// Create a new transfer
+const createTransferRes = await brex.transfers.create({
   amount: {
     // Transfer Amount as cents
     amount: 12340,
@@ -46,6 +50,9 @@ const res = await brex.transfers.create({
   externalMemo: 'ACH PMT',
   cashAccountId: 'your_cash_account_id',
 })
+
+// Get existing transfer
+const getTransferRes = await brex.transfers.get('transfer_id')
 ```
 
 Optionally, you can add a callback function that will be called when token pair is updated:
