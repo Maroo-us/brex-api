@@ -1,4 +1,4 @@
-# brex-api
+# brex-api [![NPM][npm-badge]][npm] [![Test][workflow-badge]][workflow]
 
 Unofficial JS/TS wrapper for Brex (c) API.
 
@@ -120,3 +120,8 @@ By default, the production environment is used.
 Maroo-us/brex-api — Licensed under the [MIT License](LICENSE).
 
 “Brex” and the Brex logo — registered trademarks of ”Brex Inc.”
+
+[workflow]: https://github.com/Maroo-us/brex-api/actions?query=workflow%3ABuild
+[workflow-badge]: https://img.shields.io/github/workflow/status/Maroo-us/brex-api/Build
+[npm]: https://www.npmjs.com/package/@maroo-us/brex-api
+[npm-badge]: https://img.shields.io/npm/v/@maroo-us/brex-api
