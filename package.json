@@ -1,6 +1,6 @@
 {
   "name": "@maroo-us/brex-api",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Unofficial JS/TS wrapper for Brex (c) API.",
   "main": "dist/brex-api.js",
   "license": "MIT",
@@ -13,8 +13,8 @@
     "maroo-us"
   ],
   "bugs": {
-    "url" : "https://github.com/Maroo-us/brex-api/issues",
-    "email" : "support@maroo.us"
+    "url": "https://github.com/Maroo-us/brex-api/issues",
+    "email": "support@maroo.us"
   },
   "repository": {
     "type": "git",
@@ -22,12 +22,12 @@
   },
   "contributors": [
     {
-      "name" : "Alexey Agachev",
-      "email" : "a.agachev@maroo.us"
+      "name": "Alexey Agachev",
+      "email": "a.agachev@maroo.us"
     },
     {
-      "name" : "Andrei Riaskov",
-      "email" : "andrei@maroo.us"
+      "name": "Andrei Riaskov",
+      "email": "andrei@maroo.us"
     }
   ],
   "files": [
