@@ -52,7 +52,6 @@
   },
   "devDependencies": {
     "@microsoft/api-extractor": "7.18.6",
-    "@rollup/plugin-node-resolve": "13.0.0",
     "@typescript-eslint/eslint-plugin": "4.28.2",
     "@typescript-eslint/parser": "4.28.2",
     "eslint": "7.30.0",
@@ -61,7 +60,6 @@
     "prettier": "2.3.2",
     "rollup": "2.53.0",
     "rollup-plugin-banner2": "1.2.2",
-    "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-terser": "7.0.2",
     "rollup-plugin-typescript2": "0.30.0",
     "typescript": "4.3.5"

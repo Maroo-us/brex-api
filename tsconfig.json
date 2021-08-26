@@ -6,7 +6,8 @@
     "noImplicitReturns": true,
     //    "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "Node"
   },
   "include": ["src/**/*"]
 }

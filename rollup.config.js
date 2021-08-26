@@ -1,6 +1,4 @@
 import banner from 'rollup-plugin-banner2'
-import commonjs from 'rollup-plugin-commonjs'
-import nodeResolve from '@rollup/plugin-node-resolve'
 import typescript from 'rollup-plugin-typescript2'
 import { terser } from 'rollup-plugin-terser'
 
@@ -31,15 +29,13 @@ function output(distFileName, format) {
 export default {
   input: 'src/index.ts',
   output: [
-    output('brex-api', 'umd'),
-    output('brex-api.min', 'umd'),
+    output('brex-api', 'cjs'),
+    output('brex-api.min', 'cjs'),
     output('brex-api.esm', 'esm'),
     output('brex-api.esm.min', 'esm'),
   ],
   plugins: [
     banner(() => bannerText),
-    nodeResolve({ browser: true }),
-    commonjs(),
     typescript({
       tsconfig: 'tsconfig.build.json',
       useTsconfigDeclarationDir: true,
