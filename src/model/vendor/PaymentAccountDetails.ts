@@ -1,15 +1,17 @@
+import { PaymentDetailsType } from './PaymentDetailsType'
+import { PaymentAccountClass } from './PaymentAccountClass'
 import { PaymentAccountType } from './PaymentAccountType'
 
 export interface PaymentAccountDetails {
   paymentInstrumentId: string
 
-  type: PaymentAccountType
+  type: PaymentDetailsType
 
   routingNumber: string
 
   accountNumber: string
 
-  accountType: string
+  accountType: PaymentAccountClass
 
-  accountClass: string
+  accountClass: PaymentAccountType
 }

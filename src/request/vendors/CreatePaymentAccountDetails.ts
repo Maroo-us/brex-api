@@ -1,7 +1,7 @@
-import { PaymentAccountType } from '../../model'
+import { PaymentDetailsType } from '../../model'
 
 export interface CreatePaymentAccountDetails {
-  type: PaymentAccountType
+  type: PaymentDetailsType
 
   routingNumber: string
 
