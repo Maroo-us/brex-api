@@ -1,7 +1,7 @@
 import { AccountingApi, TransfersApi, VendorsApi } from './namespace'
 
 import { BrexClientOptions } from './BrexClientOptions'
-import { BrexEnvironment, getBaseUrl } from './BrexEnvironment'
+import { BrexEnvironment, getAuthTokenUrl, getBaseUrl } from './BrexEnvironment'
 
 import { HttpClientImpl } from './HttpClientImpl'
 import { TokenProvider, TokenPairExchangeCallback } from './token'
@@ -27,8 +27,10 @@ export class BrexClient {
       environment = BrexEnvironment.Production,
     } = options
     const baseUrl = getBaseUrl(environment)
+    const authTokenUrl = getAuthTokenUrl(environment)
 
     const tokenProvider = new TokenProvider({
+      authTokenUrl,
       clientId,
       clientSecret,
       redirectUri,

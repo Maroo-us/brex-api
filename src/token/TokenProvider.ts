@@ -9,6 +9,7 @@ export class TokenProvider {
   private readonly clientId: string
   private readonly clientSecret: string
   private readonly redirectUri: string
+  private readonly authTokenUrl: string
 
   private tokenPair: TokenPair
   private exchangeCallback: TokenPairExchangeCallback = () => {
@@ -19,6 +20,7 @@ export class TokenProvider {
     this.clientId = options.clientId
     this.clientSecret = options.clientSecret
     this.redirectUri = options.redirectUri
+    this.authTokenUrl = options.authTokenUrl
 
     this.tokenPair = options.tokenPair
   }
@@ -39,11 +41,9 @@ export class TokenProvider {
     formData.append('access_token', accessToken)
     formData.append('refresh_token', refreshToken)
 
-    const { data } = await axios.post(
-      'https://accounts.staging.brexapps.com/oauth2/v1/token',
-      formData,
-      { headers: formData.getHeaders() }
-    )
+    const { data } = await axios.post(this.authTokenUrl, formData, {
+      headers: formData.getHeaders(),
+    })
 
     this.tokenPair = {
       accessToken: data.access_token,
