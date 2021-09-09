@@ -1,3 +1,5 @@
+export { OriginatingAccountType } from './OriginatingAccountType'
+export { OriginatingAccount } from './OriginatingAccount'
 export { TransferStatus } from './TransferStatus'
 export { Counterparty } from './Counterparty'
 export { PaymentType } from './PaymentType'

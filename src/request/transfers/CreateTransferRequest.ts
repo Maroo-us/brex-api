@@ -1,4 +1,5 @@
 import { Money } from '../../model/common'
+import { OriginatingAccount } from '../../model'
 import { CreateCounterpartyRequest } from './CreateCounterpartyRequest'
 
 export interface CreateTransferRequest {
@@ -25,7 +26,7 @@ export interface CreateTransferRequest {
   externalMemo: string
 
   /**
-   * Brex Cash Account ID that is used for the funds.
+   * Originating account details for the transfer.
    */
-  cashAccountId: string
+  originatingAccount: OriginatingAccount
 }
