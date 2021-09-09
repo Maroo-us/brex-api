@@ -1,4 +1,4 @@
 export enum PaymentAccountClass {
-  Checking = 'CHECKING',
-  Saving = 'SAVING',
+  Business = 'BUSINESS',
+  Personal = 'PERSONAL',
 }
