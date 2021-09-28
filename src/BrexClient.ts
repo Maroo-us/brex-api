@@ -1,10 +1,9 @@
 import { AccountingApi, TransfersApi, VendorsApi } from './namespace'
 
 import { BrexClientOptions } from './BrexClientOptions'
-import { BrexEnvironment, getAuthTokenUrl, getBaseUrl } from './BrexEnvironment'
+import { BrexEnvironment, getBaseUrl } from './BrexEnvironment'
 
 import { HttpClientImpl } from './HttpClientImpl'
-import { TokenProvider, TokenPairExchangeCallback } from './token'
 
 /**
  * A wrapper around Brex API.
@@ -14,44 +13,17 @@ export class BrexClient {
   readonly transfers: TransfersApi
   readonly vendors: VendorsApi
 
-  private tokenExchangeCallback: TokenPairExchangeCallback = () => {
-    // Do nothing
-  }
-
   constructor(options: BrexClientOptions) {
-    const {
-      tokenPair,
-      clientId,
-      clientSecret,
-      redirectUri,
-      environment = BrexEnvironment.Production,
-    } = options
+    const { accessToken, environment = BrexEnvironment.Production } = options
     const baseUrl = getBaseUrl(environment)
-    const authTokenUrl = getAuthTokenUrl(environment)
 
-    const tokenProvider = new TokenProvider({
-      authTokenUrl,
-      clientId,
-      clientSecret,
-      redirectUri,
-      tokenPair,
-    })
-    const httpClient = new HttpClientImpl(tokenProvider, {
+    const httpClient = new HttpClientImpl({
+      accessToken,
       baseUrl,
-    })
-
-    tokenProvider.onExchangeComplete((tokenPair) => {
-      this.tokenExchangeCallback(tokenPair)
     })
 
     this.accounting = new AccountingApi(httpClient)
     this.transfers = new TransfersApi(httpClient)
     this.vendors = new VendorsApi(httpClient)
-  }
-
-  onTokenPairExchanged(callback: TokenPairExchangeCallback): BrexClient {
-    this.tokenExchangeCallback = callback
-
-    return this
   }
 }

@@ -1,5 +1,4 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
-import createAuthRefreshInterceptor from 'axios-auth-refresh'
 
 import { HttpClient } from './http/HttpClient'
 import { HttpGetOptions } from './http/HttpGetOptions'
@@ -9,16 +8,14 @@ import { HttpDeleteOptions } from './http/HttpDeleteOptions'
 import { RequestOptions } from './http/RequestOptions'
 import { HttpClientOptions } from './HttpClientOptions'
 
-import { TokenProvider } from './token'
-
 import { decamelizeRequestData } from './interceptor/DecamelizeRequestData'
 import { camelizeResponseData } from './interceptor/CamelizeResponseData'
 
 export class HttpClientImpl implements HttpClient {
   private readonly axios: AxiosInstance
 
-  constructor(tokenProvider: TokenProvider, options: HttpClientOptions) {
-    const { baseUrl } = options
+  constructor(options: HttpClientOptions) {
+    const { baseUrl, accessToken } = options
 
     this.axios = axios.create({
       baseURL: baseUrl,
@@ -31,16 +28,11 @@ export class HttpClientImpl implements HttpClient {
         ...config,
         headers: {
           common: {
-            Authorization: `Bearer ${tokenProvider.getAccessToken()}`,
+            Authorization: `Bearer ${accessToken}`,
           },
         },
       }
     })
-
-    createAuthRefreshInterceptor(
-      this.axios,
-      async () => await tokenProvider.exchangePair()
-    )
   }
 
   async get<Response>(options: HttpGetOptions): Promise<Response> {

@@ -46,8 +46,6 @@
   },
   "dependencies": {
     "axios": "0.21.4",
-    "axios-auth-refresh": "3.1.0",
-    "form-data": "4.0.0",
     "snake-camel": "1.0.8"
   },
   "devDependencies": {
