@@ -1,6 +1,6 @@
 {
   "name": "@maroo-us/brex-api",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Unofficial JS/TS wrapper for Brex (c) API.",
   "main": "dist/brex-api.js",
   "license": "MIT",
