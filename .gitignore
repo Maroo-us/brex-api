@@ -4,5 +4,6 @@
 /temp/
 /types/
 
+.DS_Store
 *.log
 *.tgz
