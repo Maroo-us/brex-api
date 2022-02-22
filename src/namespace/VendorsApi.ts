@@ -1,7 +1,7 @@
 import { HttpClient } from '../http/HttpClient'
 
 import { Vendor } from '../model'
-import { ListOptions } from '../request'
+import { CreateVendorRequestOptions, ListOptions } from '../request'
 import { ListResponse } from '../response'
 
 import { CreateVendorOptions, UpdateVendorOptions } from '../request/vendors'
@@ -17,10 +17,18 @@ export class VendorsApi {
     private readonly httpClient: HttpClient
   ) {}
 
-  async create(createOptions: CreateVendorOptions): Promise<Vendor> {
+  async create(
+    createOptions: CreateVendorOptions,
+    requestOptions: CreateVendorRequestOptions
+  ): Promise<Vendor> {
+    const { idempotencyKey } = requestOptions
+
     return this.httpClient.post({
       path: '/v1/vendors',
       body: createOptions,
+      headers: {
+        'Idempotency-Key': idempotencyKey,
+      },
     })
   }
 

@@ -2,7 +2,11 @@ import { HttpClient } from '../http/HttpClient'
 
 import { Transfer } from '../model'
 import { ListResponse } from '../response'
-import { ListOptions, CreateTransferRequest } from '../request'
+import {
+  ListOptions,
+  CreateTransferRequest,
+  CreateTransferRequestOptions,
+} from '../request'
 
 export class TransfersApi {
   /**
@@ -15,10 +19,18 @@ export class TransfersApi {
     private readonly httpClient: HttpClient
   ) {}
 
-  async create(createOptions: CreateTransferRequest): Promise<Transfer> {
+  async create(
+    createOptions: CreateTransferRequest,
+    requestOptions: CreateTransferRequestOptions
+  ): Promise<Transfer> {
+    const { idempotencyKey } = requestOptions
+
     return this.httpClient.post({
       path: '/v1/transfers',
       body: createOptions,
+      headers: {
+        'Idempotency-Key': idempotencyKey,
+      },
     })
   }
 
