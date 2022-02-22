@@ -27,6 +27,7 @@ export class HttpClientImpl implements HttpClient {
       return {
         ...config,
         headers: {
+          ...config.headers,
           common: {
             Authorization: `Bearer ${accessToken}`,
           },
