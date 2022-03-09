@@ -1,4 +1,9 @@
-import { AccountingApi, TransfersApi, VendorsApi } from './namespace'
+import {
+  AccountingApi,
+  TransfersApi,
+  VendorsApi,
+  WebhooksApi,
+} from './namespace'
 
 import { BrexClientOptions } from './BrexClientOptions'
 import { BrexEnvironment, getBaseUrl } from './BrexEnvironment'
@@ -11,6 +16,7 @@ import { HttpClientImpl } from './HttpClientImpl'
 export class BrexClient {
   readonly accounting: AccountingApi
   readonly transfers: TransfersApi
+  readonly webhooks: WebhooksApi
   readonly vendors: VendorsApi
 
   constructor(options: BrexClientOptions) {
@@ -24,6 +30,7 @@ export class BrexClient {
 
     this.accounting = new AccountingApi(httpClient)
     this.transfers = new TransfersApi(httpClient)
+    this.webhooks = new WebhooksApi(httpClient)
     this.vendors = new VendorsApi(httpClient)
   }
 }
