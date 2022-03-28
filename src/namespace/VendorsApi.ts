@@ -5,6 +5,7 @@ import { CreateVendorRequestOptions, ListOptions } from '../request'
 import { ListResponse } from '../response'
 
 import { CreateVendorOptions, UpdateVendorOptions } from '../request/vendors'
+import { ListVendorsOptions } from '../request/vendors/ListVendorsOptions'
 
 export class VendorsApi {
   /**
@@ -54,14 +55,17 @@ export class VendorsApi {
     })
   }
 
-  async list(listOptions: ListOptions = {}): Promise<ListResponse<Vendor>> {
-    const { cursor, limit = 100 } = listOptions
+  async list(
+    listOptions: ListVendorsOptions = {}
+  ): Promise<ListResponse<Vendor>> {
+    const { cursor, name, limit = 100 } = listOptions
 
     return this.httpClient.get({
       path: '/v1/vendors',
       params: {
         cursor,
         limit,
+        name,
       },
     })
   }
