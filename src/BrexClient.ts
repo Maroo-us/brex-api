@@ -20,12 +20,15 @@ export class BrexClient {
   readonly vendors: VendorsApi
 
   constructor(options: BrexClientOptions) {
-    const { accessToken, environment = BrexEnvironment.Production } = options
-    const baseUrl = getBaseUrl(environment)
-
-    const httpClient = new HttpClientImpl({
+    const {
       accessToken,
       baseUrl,
+      environment = BrexEnvironment.Production,
+    } = options
+
+    const httpClient = new HttpClientImpl({
+      accessToken: accessToken,
+      baseUrl: baseUrl || getBaseUrl(environment),
     })
 
     this.accounting = new AccountingApi(httpClient)
