@@ -6,7 +6,10 @@ export function decamelizeRequestData(
 ): AxiosRequestConfig {
   const newConfig = { ...config }
 
-  if (newConfig.headers['Content-Type'] === 'multipart/form-data') {
+  if (
+    newConfig.headers &&
+    newConfig.headers['Content-Type'] === 'multipart/form-data'
+  ) {
     return newConfig
   }
 
