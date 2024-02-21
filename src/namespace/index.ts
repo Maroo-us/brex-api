@@ -1,4 +1,5 @@
 export { AccountingApi } from './AccountingApi'
 export { TransfersApi } from './TransfersApi'
+export { AccountsApi } from './AccountsApi'
 export { WebhooksApi } from './WebhooksApi'
 export { VendorsApi } from './VendorsApi'

@@ -1,5 +1,6 @@
 import {
   AccountingApi,
+  AccountsApi,
   TransfersApi,
   VendorsApi,
   WebhooksApi,
@@ -14,8 +15,12 @@ import { HttpClientImpl } from './HttpClientImpl'
  * A wrapper around Brex API.
  */
 export class BrexClient {
+  /**
+   * @deprecated
+   */
   readonly accounting: AccountingApi
   readonly transfers: TransfersApi
+  readonly accounts: AccountsApi
   readonly webhooks: WebhooksApi
   readonly vendors: VendorsApi
 
@@ -33,6 +38,7 @@ export class BrexClient {
 
     this.accounting = new AccountingApi(httpClient)
     this.transfers = new TransfersApi(httpClient)
+    this.accounts = new AccountsApi(httpClient)
     this.webhooks = new WebhooksApi(httpClient)
     this.vendors = new VendorsApi(httpClient)
   }

@@ -1,4 +1,5 @@
 export { Account } from './Account'
 export { AccountType } from './AccountType'
+export { CashAccount } from './CashAccount'
 export { AccountStatus } from './AccountStatus'
 export { AccountInstrument } from './AccountInstrument'
