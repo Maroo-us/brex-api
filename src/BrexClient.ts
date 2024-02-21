@@ -16,7 +16,7 @@ import { HttpClientImpl } from './HttpClientImpl'
  */
 export class BrexClient {
   /**
-   * @deprecated
+   * @deprecated Use BrexClient.accounts instead.
    */
   readonly accounting: AccountingApi
   readonly transfers: TransfersApi
