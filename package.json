@@ -36,13 +36,13 @@
   "scripts": {
     "build": "rollup -c",
     "types": "api-extractor run",
-    "dist": "yarn build && yarn types && npm pack",
+    "dist": "npm run build && npm run types && npm pack",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
     "lint": "eslint \"src/**/*.ts\"",
     "lint:fix": "eslint --fix \"src/**/*.ts\"",
     "prepare": "husky install",
-    "prepublishOnly": "yarn build && yarn types"
+    "prepublishOnly": "npm run build && npm run types"
   },
   "dependencies": {
     "axios": "0.21.4",
